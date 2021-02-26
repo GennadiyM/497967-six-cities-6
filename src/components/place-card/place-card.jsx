@@ -1,8 +1,12 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
-const PlaceCard = () => {
+const PlaceCard = (props) => {
+  const {width, modifier} = props;
+  const classNames = `${modifier} place-card`;
+
     return (
-    <article className="cities__place-card place-card">
+    <article className={classNames}>
         <div className="place-card__mark">
           <span>Premium</span>
         </div>
@@ -28,7 +32,7 @@ const PlaceCard = () => {
             <div className="place-card__stars rating__stars">
             <span 
                   style={{
-                      width: `80%`,
+                      width: width,
                   }}
               >
               </span>
@@ -42,6 +46,11 @@ const PlaceCard = () => {
         </div>
     </article>
     );
+};
+
+PlaceCard.propTypes = {
+  width: PropTypes.string.isRequired,
+  modifier: PropTypes.string.isRequired,
 };
 
 export default PlaceCard;
