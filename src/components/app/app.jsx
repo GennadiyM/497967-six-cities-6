@@ -24,9 +24,7 @@ const App = (props) => {
                 <Route exact path="/favorite">
                     <FavoritePage />
                 </Route>
-                <Route exact path="/room/:id?">
-                    <RoomPage />
-                </Route>
+                <Route exact path="/room/:id?" component={RoomPage} />
                 <Route>
                     <NotFoundPage />
                 </Route>
